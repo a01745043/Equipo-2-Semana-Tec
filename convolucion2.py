@@ -54,7 +54,7 @@ def HEEHEE (A):
         for j in range(0,len(A[0])):
             if A[i][j] < 128:
                 B[i][j] = 0
-            elif A[i][j] > 128:
+            elif A[i][j] >= 128:
                 B[i][j] = 255
     return B
                 
@@ -76,6 +76,6 @@ pad = convulucion(padding, Filtro)
 heehee= HEEHEE(Matriz)
 img_padding = cv2.imwrite('padding.jpg',pad)
 conv = cv2.imwrite('convolucion.jpg',img_conv)
-BN= cv2.imwrite('BN.jpg',heehee)
+BN= cv2.imwrite('BN2.jpg',heehee)
 
 
