@@ -50,11 +50,11 @@ def agregar_padding(A):  #SIN PADDING
 
 def HEEHEE (A):
     B = np.zeros((len(A),len(A[0])))
-    for i in range(len(A)):
-        for j in range(len(A[0])):
-            if A[i][j]<50:
+    for i in range(0,len(A)):
+        for j in range(0,len(A[0])):
+            if A[i][j] < 128:
                 B[i][j] = 0
-            elif A[i][j] > 50:
+            elif A[i][j] > 128:
                 B[i][j] = 255
     return B
                 
