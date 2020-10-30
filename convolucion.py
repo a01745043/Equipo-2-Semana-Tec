@@ -1,4 +1,5 @@
 import numpy as np
+import cv2
 def convulucion(A,B):
     C=np.zeros((len(A)-2,len(A[0])-2))
     suma=0
@@ -12,8 +13,16 @@ def convulucion(A,B):
             suma=0
     return C
 
-matriz=[[6,9,0,3],[8,4,9,1],[4,1,3,12],[3,2,1,100]]
-filtro=[[1,0,2],[5,0,9],[6,2,1]]
+imagen = cv2.imread('003.jpg')
+imagen = cv2.cvtColor(imagen,cv2.COLOR_BGR2GRAY)
+imagen = cv2.resize(imagen,(256,256))
+
+
+
+
+
+matriz=[img_final]
+filtro=[[1,1,1],[1,0,1],[1,1,1]]
 
 A=np.array(matriz)
 B=np.array(filtro)
@@ -21,4 +30,4 @@ B=np.array(filtro)
 #C=np.zeros((2,2))
 
 resultado=convulucion(A,B)
-print(resultado)
+final=cv2.imwrite('convolucion.jpg',resultado)
