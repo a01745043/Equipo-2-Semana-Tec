@@ -47,6 +47,17 @@ def agregar_padding(A):  #SIN PADDING
         for j in range(len(A[0])):
             B[i+1][j+1]=A[i][j]
     return B
+
+def HEEHEE (A):
+    B = np.zeros((len(A),len(A[0])))
+    for i in range(len(A)):
+        for j in range(len(A[0])):
+            if A[i][j]<128:
+                B[i][j] = 0
+            elif A[i][j] > 128:
+                B[i][j] = 1
+    return B
+                
                 
             
 
@@ -62,7 +73,9 @@ Filtro=[[1,1,1],[1,0,1],[1,1,1]]
 img_conv=convulucion(Matriz, Filtro)
 padding = agregar_padding(Matriz)
 pad = convulucion(padding, Filtro)
+heehee= HEEHEE(Matriz)
 img_padding = cv2.imwrite('padding.jpg',pad)
 conv = cv2.imwrite('convolucion.jpg',img_conv)
+BN= cv2.imwrite('BN.jpg',heehee)
 
 
