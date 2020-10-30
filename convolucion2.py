@@ -56,7 +56,6 @@ def HEEHEE (A):
                 B[i][j] = 0
             elif A[i][j] > 128:
                 B[i][j] = 255
-    print(B)
     return B
                 
                 
