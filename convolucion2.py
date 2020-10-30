@@ -52,9 +52,9 @@ def HEEHEE (A):
     B = np.zeros((len(A),len(A[0])))
     for i in range(len(A)):
         for j in range(len(A[0])):
-            if A[i][j]<100:
+            if A[i][j]<50:
                 B[i][j] = 0
-            elif A[i][j] > 100:
+            elif A[i][j] > 50:
                 B[i][j] = 255
     return B
                 
