@@ -55,7 +55,7 @@ def HEEHEE (A):
             if A[i][j]<128:
                 B[i][j] = 0
             elif A[i][j] > 128:
-                B[i][j] = 1
+                B[i][j] = 255
     return B
                 
                 
