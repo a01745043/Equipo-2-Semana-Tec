@@ -40,7 +40,13 @@ def esc_grises(imagen):
             Img_gris[i][j]=s
             s = 0
     return Img_gris
-                
+
+def agregar_padding(A):  #SIN PADDING
+    B = np.zeros((len(A)+2,len(A[0])+2))
+    for i in range(len(A)):
+        for j in range(len(A[0])):
+            B[i+1][j+1]=A[i][j]
+    return B
                 
             
 
@@ -54,4 +60,9 @@ print(Matriz)
 img_gris = cv2.imwrite('grises.jpg',Matriz)
 Filtro=[[1,1,1],[1,0,1],[1,1,1]]
 img_conv=convulucion(Matriz, Filtro)
+padding = agregar_padding(Matriz)
+pad = convulucion(padding, Filtro)
+img_padding = cv2.imwrite('padding.jpg',pad)
 conv = cv2.imwrite('convolucion.jpg',img_conv)
+
+
